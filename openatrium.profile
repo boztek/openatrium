@@ -8,6 +8,7 @@ function openatrium_profile_details() {
   return array(
     'name' => 'Open Atrium',
     'description' => 'Open Atrium by Development Seed.'
+    'old_short_name' => 'atrium_installer',
   );
 }
 
