@@ -23,7 +23,6 @@ function openatrium_profile_modules() {
     'dblog',
     'filter',
     'help',
-    'menu',
     'node',
     'openid',
     'search',
@@ -31,8 +30,6 @@ function openatrium_profile_modules() {
     'taxonomy',
     'upload',
     'user',
-    // Admin
-    'admin',
     // Views
     'views', 'litenode',
     // OG
@@ -65,8 +62,6 @@ function openatrium_profile_modules() {
     'spaces', 'spaces_user', 'spaces_og',
     // Ucreate
     'ucreate', 'ucreate_og',
-    // Atrium
-    'atrium',
   );
 
   // If language is not English we add the 'atrium_translate' module the first
@@ -107,7 +102,7 @@ function _openatrium_atrium_modules() {
     // Content profile
     'content_profile',
     // Atrium features
-    'atrium_blog', 'atrium_book', 'atrium_calendar', 'atrium_casetracker', 'atrium_profile', 'atrium_shoutbox',
+    'atrium', 'atrium_blog', 'atrium_book', 'atrium_calendar', 'atrium_casetracker', 'atrium_groups', 'atrium_members', 'atrium_profile', 'atrium_shoutbox',
     // Dashboard
     'spaces_dashboard', 'jquery_ui',
     // Formats
@@ -118,8 +113,12 @@ function _openatrium_atrium_modules() {
     'color', 'designkit',
     // VBO
     'views_bulk_operations',
-    // Atrium intranet distro module
-    'atrium_groups', 'atrium_members',
+
+    // Menu should be installed/enabled absolutely last, as it rebuilds the
+    // menu cache. This forces Views to static cache default views, and in
+    // order for Atrium tests to work properly these need to be loaded.
+    'menu',
+    'admin',
   );
 }
 
