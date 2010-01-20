@@ -267,8 +267,15 @@ function _openatrium_intranet_configure() {
 
   // Revert key components that are overridden by others on install.
   $revert = array(
-    'atrium' => array('filter'),
-    'atrium_book' => array('variable'),
+    'atrium' => array('user', 'variable', 'filter'),
+    'atrium_blog' => array('user', 'variable'),
+    'atrium_book' => array('user', 'variable'),
+    'atrium_calendar' => array('user', 'variable'),
+    'atrium_casetracker' => array('user', 'variable'),
+    'atrium_groups' => array('user', 'variable'),
+    'atrium_members' => array('user', 'variable'),
+    'atrium_profile' => array('user', 'variable'),
+    'atrium_shoutbox' => array('user', 'variable'),
   );
   features_revert($revert);
 }
