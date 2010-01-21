@@ -23,6 +23,7 @@ function openatrium_profile_modules() {
     'dblog',
     'filter',
     'help',
+    'menu',
     'node',
     'openid',
     'search',
@@ -30,6 +31,8 @@ function openatrium_profile_modules() {
     'taxonomy',
     'upload',
     'user',
+    // Admin
+    'admin',
     // Views
     'views', 'litenode',
     // OG
@@ -113,12 +116,6 @@ function _openatrium_atrium_modules() {
     'color', 'designkit',
     // VBO
     'views_bulk_operations',
-
-    // Menu should be installed/enabled absolutely last, as it rebuilds the
-    // menu cache. This forces Views to static cache default views, and in
-    // order for Atrium tests to work properly these need to be loaded.
-    'menu',
-    'admin',
   );
 }
 
