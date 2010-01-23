@@ -280,11 +280,18 @@ function _openatrium_intranet_configure() {
  * Configuration. Second stage.
  */
 function _openatrium_intranet_configure_check() {
-  // Rebuild key tables/caches
-  module_rebuild_cache();
+  // This isn't actually necessary as there are no node_access() entries,
+  // but we run it to prevent the "rebuild node access" message from being
+  // shown on install.
   node_access_rebuild();
-  drupal_get_schema(NULL, TRUE);
-  drupal_flush_all_caches();    
+
+  // @TODO: Don't appear to be necessary for functional Atrium install.
+  // Determine if these were added for Aegir.
+
+  // Rebuild key tables/caches
+  // module_rebuild_cache();
+  // drupal_get_schema(NULL, TRUE);
+  // drupal_flush_all_caches();    
 
   // Set default theme. This must happen after drupal_flush_all_caches(), which
   // will run system_theme_data() without detecting themes in the install
@@ -339,11 +346,16 @@ function _openatrium_translate_batch_finished($success, $results) {
 
 /**
  * Alter some forms implementing hooks in system module namespace
- * 
  * This is a trick for hooks to get called, otherwise we cannot alter forms
  */
 
-// Set Atrium as default profile
+/**
+ * @TODO: This might be impolite/too aggressive. We should at least check that
+ * other install profiles are not present to ensure we don't collide with a
+ * similar form alter in their profile.
+ *
+ * Set Open Atrium as default install profile.
+ */
 function system_form_install_select_profile_form_alter(&$form, $form_state) {
   foreach($form['profile'] as $key => $element) {
     $form['profile'][$key]['#value'] = 'openatrium';
@@ -364,6 +376,11 @@ function system_form_install_select_locale_form_alter(&$form, $form_state) {
  * Alter the install profile configuration form and provide timezone location options.
  */
 function system_form_install_configure_form_alter(&$form, $form_state) {
+  $form['site_information']['site_name']['#default_value'] = 'Open Atrium';
+  $form['site_information']['site_mail']['#default_value'] = 'admin@'. $_SERVER['HTTP_HOST'];
+  $form['admin_account']['account']['name']['#default_value'] = 'admin';
+  $form['admin_account']['account']['mail']['#default_value'] = 'admin@'. $_SERVER['HTTP_HOST'];
+
   if (function_exists('date_timezone_names') && function_exists('date_timezone_update_site')) {
     $form['server_settings']['date_default_timezone']['#access'] = FALSE;
     $form['server_settings']['#element_validate'] = array('date_timezone_update_site');
