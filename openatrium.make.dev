@@ -126,12 +126,21 @@ projects[views_bulk_operations][version] = "1.8"
 ; Patched
 ; Explicit versions specified to ensure patches apply cleanly. 
 projects[views][subdir] = "contrib"
-projects[views][version] = "2.6"
-projects[views][patch][] = "http://drupal.org/files/issues/views-issue-357529.patch" 
+projects[views][type] = "module"
+projects[views][download][type] = "cvs"
+projects[views][download][module] = "contributions/modules/views"
+projects[views][download][revision] = "DRUPAL-6--2"
+
+; Temporarily disabling l10n patch. Needs to be updated to work with that
+; latest 2.x or we need to move to 3.x. We can't continue to use 2.6 and
+; expect to write and apply patches from 2.x HEAD to it.
+; projects[views][patch][] = "http://drupal.org/files/issues/views-issue-357529.patch"
+
 projects[views][patch][] = "http://drupal.org/files/issues/taxonomy_views_data_v2.patch"
 projects[views][patch][] = "http://drupal.org/files/issues/views_check_perm_callback_0.patch"
 projects[views][patch][] = "http://drupal.org/files/issues/views_namespaced_tabs_v2.patch"
 projects[views][patch][] = "http://drupal.org/files/issues/compare_views_block_hash.patch"
+projects[views][patch][] = "http://drupal.org/files/issues/views_default_reset.patch"
 
 ; Custom modules
 projects[litecal][type] = "module"
