@@ -180,7 +180,7 @@ projects[tao][location] = "http://code.developmentseed.org/fserver"
 projects[tao][version] = "1.8"
 
 projects[rubik][location] = "http://code.developmentseed.org/fserver"
-projects[rubik][version] = "1.0-alpha4"
+projects[rubik][version] = "1.0-beta5"
 
 projects[ginkgo][type] = "theme"
 projects[ginkgo][download][type] = "git"
