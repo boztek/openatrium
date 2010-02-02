@@ -72,6 +72,7 @@ projects[notifications_team][version] = "2.0-beta5"
 
 projects[og][subdir] = "contrib"
 projects[og][version] = "2.0"
+projects[og][patch][] = "http://drupal.org/files/issues/og_views_managelink_groupcontext.patch
 
 projects[openidadmin][subdir] = "contrib"
 projects[openidadmin][version] = "1.1"
