@@ -125,7 +125,10 @@ projects[transliteration][subdir] = "contrib"
 projects[transliteration][version] = "2.1"
 
 projects[ucreate][subdir] = "contrib"
-projects[ucreate][version] = "1.0-beta2"
+projects[ucreate][type] = "module"
+projects[ucreate][download][type] = "cvs"
+projects[ucreate][download][module] = "contributions/modules/ucreate"
+projects[ucreate][download][revision] = "DRUPAL-6--1"
 
 projects[views_bulk_operations][subdir] = "contrib"
 projects[views_bulk_operations][version] = "1.8"
