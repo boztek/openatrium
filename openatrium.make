@@ -3,7 +3,10 @@ core = "6.x"
 ; Contrib projects 
 
 projects[admin][subdir] = "contrib"
-projects[admin][version] = "2.0-alpha5"
+projects[admin][type] = "module"
+projects[admin][download][type] = "cvs"
+projects[admin][download][module] = "contributions/modules/admin"
+projects[admin][download][revision] = "DRUPAL-6--2"
 
 projects[casetracker][subdir] = "contrib"
 projects[casetracker][version] = "1.0-beta4"
@@ -21,7 +24,10 @@ projects[content_profile][subdir] = "contrib"
 projects[content_profile][version] = "1.0-beta4"
 
 projects[context][subdir] = "contrib"
-projects[context][version] = "3.0-alpha2"
+projects[context][type] = "module"
+projects[context][download][type] = "cvs"
+projects[context][download][module] = "contributions/modules/context"
+projects[context][download][revision] = "DRUPAL-6--3"
 
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.2"
@@ -30,13 +36,19 @@ projects[date][subdir] = "contrib"
 projects[date][version] = "2.4"
 
 projects[designkit][subdir] = "contrib"
-projects[designkit][version] = "1.0-alpha4"
+projects[designkit][type] = "module"
+projects[designkit][download][type] = "cvs"
+projects[designkit][download][module] = "contributions/modules/designkit"
+projects[designkit][download][revision] = "DRUPAL-6--1"
 
 projects[diff][subdir] = "contrib"
 projects[diff][version] = "2.1-alpha3"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "1.0-beta5"
+projects[features][type] = "module"
+projects[features][download][type] = "cvs"
+projects[features][download][module] = "contributions/modules/features"
+projects[features][download][revision] = "DRUPAL-6--1"
 
 projects[feedapi][subdir] = "contrib"
 projects[feedapi][version] = "1.9-beta2"
@@ -72,10 +84,13 @@ projects[notifications_team][version] = "2.0-beta5"
 
 projects[og][subdir] = "contrib"
 projects[og][version] = "2.0"
-projects[og][patch][] = "http://drupal.org/files/issues/og_views_managelink_groupcontext.patch
+projects[og][patch][] = "http://drupal.org/files/issues/og_views_managelink_groupcontext.patch"
 
 projects[openidadmin][subdir] = "contrib"
-projects[openidadmin][version] = "1.1"
+projects[openidadmin][type] = "module"
+projects[openidadmin][download][type] = "cvs"
+projects[openidadmin][download][module] = "contributions/modules/openidadmin"
+projects[openidadmin][download][revision] = "HEAD"
 
 projects[parser_ical][subdir] = "contrib"
 projects[parser_ical][version] = "1.1"
@@ -84,13 +99,24 @@ projects[prepopulate][subdir] = "contrib"
 projects[prepopulate][version] = "1.1"
 
 projects[purl][subdir] = "contrib"
-projects[purl][version] = "1.0-beta7"
+projects[purl][type] = "module"
+projects[purl][download][type] = "cvs"
+projects[purl][download][module] = "contributions/modules/purl"
+projects[purl][download][revision] = "DRUPAL-6--1"
+
+projects[purl][version] = "1.0-beta6"
 
 projects[spaces][subdir] = "contrib"
-projects[spaces][version] = "3.0-alpha2"
+projects[spaces][type] = "module"
+projects[spaces][download][type] = "cvs"
+projects[spaces][download][module] = "contributions/modules/spaces"
+projects[spaces][download][revision] = "DRUPAL-6--3"
 
 projects[strongarm][subdir] = "contrib"
-projects[strongarm][version] = "2.0-beta3"
+projects[strongarm][type] = "module"
+projects[strongarm][download][type] = "cvs"
+projects[strongarm][download][module] = "contributions/modules/strongarm"
+projects[strongarm][download][revision] = "DRUPAL-6--2"
 
 projects[token][subdir] = "contrib"
 projects[token][version] = "1.12"
@@ -99,29 +125,27 @@ projects[transliteration][subdir] = "contrib"
 projects[transliteration][version] = "2.1"
 
 projects[ucreate][subdir] = "contrib"
-projects[ucreate][version] = "1.0-beta2"
+projects[ucreate][type] = "module"
+projects[ucreate][download][type] = "cvs"
+projects[ucreate][download][module] = "contributions/modules/ucreate"
+projects[ucreate][download][revision] = "DRUPAL-6--1"
 
 projects[views_bulk_operations][subdir] = "contrib"
 projects[views_bulk_operations][version] = "1.8"
 
 ; Patched
-; Explicit versions specified to ensure patches apply cleanly.
 projects[views][subdir] = "contrib"
 projects[views][type] = "module"
 projects[views][download][type] = "cvs"
 projects[views][download][module] = "contributions/modules/views"
 projects[views][download][revision] = "DRUPAL-6--2"
 
-; Temporarily disabling l10n patch. Needs to be updated to work with that
-; latest 2.x or we need to move to 3.x. We can't continue to use 2.6 and
-; expect to write and apply patches from 2.x HEAD to it.
-; projects[views][patch][] = "http://drupal.org/files/issues/views-issue-357529.patch"
-
 projects[views][patch][] = "http://drupal.org/files/issues/taxonomy_views_data_v2.patch"
 projects[views][patch][] = "http://drupal.org/files/issues/views_check_perm_callback_0.patch"
 projects[views][patch][] = "http://drupal.org/files/issues/views_namespaced_tabs_v2.patch"
 projects[views][patch][] = "http://drupal.org/files/issues/compare_views_block_hash.patch"
 projects[views][patch][] = "http://drupal.org/files/issues/views_default_reset.patch"
+projects[views][patch][] = "http://cloud.github.com/downloads/developmentseed/atrium_features/views2_simple_translatables.patch"
 
 ; Custom modules
 projects[litecal][type] = "module"
@@ -136,8 +160,9 @@ projects[litenode][subdir] = "custom"
 
 ; @TODO: determine the fate of messaging shoutbox.
 
-projects[seed][location] = "http://code.developmentseed.org/fserver"
-projects[seed][version] = "4.0"
+projects[seed][type] = "module"
+projects[seed][download][type] = "git"
+projects[seed][download][url] = "git://github.com/developmentseed/seed.git"
 projects[seed][subdir] = "custom"
 
 projects[xref][type] = "module"
@@ -177,11 +202,13 @@ projects[l10n_update][subdir] = "l10n"
 ;projects[l10n_update][version] = ?
 
 ; Themes
-projects[tao][location] = "http://code.developmentseed.org/fserver"
-projects[tao][version] = "1.8"
+projects[tao][type] = "theme"
+projects[tao][download][type] = "git"
+projects[tao][download][url] = "git://github.com/developmentseed/tao.git"
 
-projects[rubik][location] = "http://code.developmentseed.org/fserver"
-projects[rubik][version] = "1.0-beta5"
+projects[rubik][type] = "theme"
+projects[rubik][download][type] = "git"
+projects[rubik][download][url] = "git://github.com/developmentseed/rubik.git"
 
 projects[ginkgo][type] = "theme"
 projects[ginkgo][download][type] = "git"
